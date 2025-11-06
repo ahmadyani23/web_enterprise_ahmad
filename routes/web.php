@@ -19,5 +19,8 @@ Route::get('/layanankami', function () {
 })->name('layanankami');
 
 Route::get('/hubungikami', function () {
-    return view('hubunginkami');
+    return view('hubungikami');
 })->name('hubungikami');
+
+use App\Http\Controllers\ContactController;
+Route::post('/hubungi-kami', [ContactController::class, 'submit'])->name('hubungikami.submit');
